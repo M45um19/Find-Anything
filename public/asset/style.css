@@ -7,14 +7,12 @@
 }
 .logo2{
   width: 60px;
-  height: 60px;
+  height: 50px;
 }
 .bg-custom_nav{
   background-color: #094f9b;
 } 
-nav{
-  height: 70px;
-}
+
 .logo{
   margin-left: 20px;
 }
@@ -49,14 +47,19 @@ nav{
 .log_reg:hover{
   color: black;
 }
-.bg-cus_log{
-  background-color: rgb(228, 235, 240)
-}
+
 
 
 .drop_username{
   margin-left: 4px;
-  color: #093d74;
+  color: white;
   padding: 5px;
   font-family: 'Roboto', sans-serif;
+}
+.drop_log_link{
+  background-color: #093d74;
+ 
+}
+.drop_log_link:hover{
+ background-color: #0f4f92;
 }
