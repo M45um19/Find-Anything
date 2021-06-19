@@ -1,65 +1,62 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.logo2{
-  width: 60px;
-  height: 50px;
+.logo2 {
+    width: 60px;
+    height: 50px;
 }
-.bg-custom_nav{
-  background-color: #094f9b;
-} 
+.bg-custom_nav {
+    background-color: white;
+}
 
-.logo{
-  margin-left: 20px;
+.logo {
+    margin-left: 20px;
 }
 /* Slider Start */
-.desc_ban{
-  padding: 50px;
-  margin-left: 60px;
+.desc_ban {
+    padding: 50px;
+    margin-left: 60px;
 }
-.ban_img{
-  margin-top: 20px;  
-  height: 90vh;
+.ban_img {
+    margin-top: 20px;
+    height: 90vh;
 }
-.custom_cur{
-  background-color: rgb(232, 232, 241);
+.custom_cur {
+    background-color: #f0f2f5;
 }
-.ban_head{
-  color: #093d74;
+.ban_head {
+    color: #0d6efd;
 }
-.btn-custom{
-  background-color: #094f9b;
-  color: white;
-}
-
-
-
-.log_reg{
-  color: black;
-  text-decoration: none;
-  padding: 10px;
-  margin: 10px;
-}
-.log_reg:hover{
-  color: black;
+.btn-custom {
+    background-color: #0d6efd;
+    color: white;
 }
 
-
-
-.drop_username{
-  margin-left: 4px;
-  color: white;
-  padding: 5px;
-  font-family: 'Roboto', sans-serif;
+.log_reg {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
 }
-.drop_log_link{
-  background-color: #093d74;
- 
+.log_reg:hover {
+    color: black;
 }
-.drop_log_link:hover{
- background-color: #0f4f92;
+
+.drop_username {
+    margin-left: 4px;
+    color: #0d6efd;
+    padding: 5px;
+    font-family: "Roboto", sans-serif;
+}
+.drop_log_link {
+    background-color: #0d6efd;
+}
+.drop_log_link:hover {
+    background-color: #0f4f92;
+}
+.nav_lnk {
+    font-weight: bolder;
 }
