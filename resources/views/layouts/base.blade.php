@@ -43,6 +43,26 @@
         <span class="navbar-text">
           @if(Route::has('login'))
           @auth
+          @if(Auth::user()->utype === 'ADM')
+          <div class="dropdown">
+            <a class="dropdown-toggle log_in_link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa fa-user drop_username text-primary" style="font-size:25px;"><span class="drop_username">{{Auth::user()->name}}</span> </i>
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item text-primary" href="{{ url('/user/profile') }}">Profile</a></li>
+              <li><a class="dropdown-item text-primary" href="{{route('user.Shop')}}">My Shop</a></li>
+              <li><a class="dropdown-item text-primary" href="{{route('admin.dasboard')}}">Admin Panel</a></li>
+              <li>
+                <a class="dropdown-item text-primary" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log Out</a>
+                <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                  @csrf
+                </form>
+              </li>
+
+            </ul>
+          </div>
+          @else
           <div class="dropdown">
             <a class="dropdown-toggle log_in_link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fa fa-user drop_username text-primary" style="font-size:25px;"><span class="drop_username">{{Auth::user()->name}}</span> </i>
@@ -60,7 +80,7 @@
 
             </ul>
           </div>
-
+          @endif
 
           @else
           <a href="{{route('login')}}" class="log_reg fw-bold text-primary">Log in</a>
