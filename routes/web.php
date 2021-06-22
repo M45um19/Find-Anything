@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Livewire\Admin\AdminAddMarketComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\Admin\AdminMarketComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\User\UserShopComponent;
 use Illuminate\Support\Facades\Route;
@@ -30,9 +32,15 @@ Route::get('/', HomeComponent::class);
 // });
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+
+    //user route
     Route::get('/user/shop', UserShopComponent::class)->name('user.Shop');
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () {
+
+    //admin route
     Route::get('/admin/admindashboard', AdminDashboardComponent::class)->name('admin.dasboard');
+    Route::get('/admin/market', AdminMarketComponent::class)->name('admin.market');
+    Route::get('/admin/addmarket', AdminAddMarketComponent::class)->name('admin.addMarket');
 });
