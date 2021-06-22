@@ -17,6 +17,7 @@ class CreateMarketsTable extends Migration
             $table->id();
             $table->string('market_name');
             $table->string('market_address');
+            $table->string('market_image')->default('no image');
             $table->timestamps();
         });
     }
