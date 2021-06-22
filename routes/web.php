@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Admin\AdminAddMarketComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\Admin\AdminEditMarketComponent;
 use App\Http\Livewire\Admin\AdminMarketComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\User\UserShopComponent;
@@ -43,4 +44,5 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
     Route::get('/admin/admindashboard', AdminDashboardComponent::class)->name('admin.dasboard');
     Route::get('/admin/market', AdminMarketComponent::class)->name('admin.market');
     Route::get('/admin/addmarket', AdminAddMarketComponent::class)->name('admin.addMarket');
+    Route::get('/admin/editmarket/{id}', AdminEditMarketComponent::class)->name('admin.editMarket');
 });

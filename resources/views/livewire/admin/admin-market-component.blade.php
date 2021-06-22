@@ -26,8 +26,8 @@
                             <td>{{$market->market_name}}</td>
                             <td>{{$market->market_address}}</td>
                             <td>
-                                <a class="btn btn-secondary" href="">Edit</a>
-                                <a class="btn btn-danger" href="=">Delete</a>
+                                <a class="btn btn-secondary" href="{{route('admin.editMarket',['id'=>$market->id])}}">Edit</a>
+                                <a class="btn btn-danger delete_anything" wire:click.prevent="deleteMarket({{$market->id}})">Delete</a>
                             </td>
 
                         </tr>

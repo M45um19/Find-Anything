@@ -7,6 +7,13 @@ use Livewire\Component;
 
 class AdminMarketComponent extends Component
 {
+    public function deleteMarket($id)
+    {
+        $market = market::find($id);
+        $market->delete();
+        session()->flash('Success_message', 'Market deleted successfully');
+        return redirect()->route('admin.market');
+    }
     public function render()
     {
         $markets = market::get();
