@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="col-md-5 ">
                                     <div class="img-box">
-                                        <img src="{{asset('asset/image/1.png')}}" alt="" />
+                                        <img src="{{asset('asset/image/images/p6.png')}}" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="col-md-5 ">
                                     <div class="img-box">
-                                        <img src="{{asset('asset/image/1.png')}}" alt="" />
+                                        <img src="{{asset('asset/image/images/p5.png')}}" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -95,16 +95,18 @@
                             <img src="{{asset('asset/image/images/p1.png')}}" alt="">
                         </div>
                         <div class="detail-box">
-                            <h6>
-                                Ring
+                            <h6 class="details_head">
+                                Monitor
                             </h6>
+                            <br>
                             <h6>
                                 Price
-                                <span>
+                                <span class="price">
                                     $200
                                 </span>
                             </h6>
                         </div>
+
                         <div class="new">
                             <span>
                                 New
@@ -126,7 +128,7 @@
                             <h6>
                                 Price
                                 <span>
-                                    $300
+                                    $30000
                                 </span>
                             </h6>
                         </div>

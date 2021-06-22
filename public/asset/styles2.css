@@ -73,7 +73,7 @@ body {
 
 #navbarSupportedContent {
     width: 100%;
-    background-color: #f9ece6;
+    background-color: #e6f5f9;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -241,7 +241,7 @@ a:focus {
 .slider_section .slider_container {
     color: #fefefe;
     background-color: #000000;
-    background-color: #f89cab;
+    background-color: #68bbe3;
     padding: 25px;
     border-radius: 0 0 15px 15px;
 }
@@ -259,11 +259,12 @@ a:focus {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    padding: 45px;
+    padding: 35px;
 }
 
 .slider_section .img-box img {
     width: 275px;
+    max-height: 70vh;
 }
 
 .slider_section .detail-box {
@@ -280,9 +281,9 @@ a:focus {
 .slider_section .detail-box a {
     display: inline-block;
     padding: 10px 40px;
-    background-color: #db4566;
+    background-color: #093c70;
     color: #ffffff;
-    border: 1px solid #db4566;
+    border: 1px solid #093c70;
     border-radius: 5px;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
@@ -292,7 +293,7 @@ a:focus {
 
 .slider_section .detail-box a:hover {
     background-color: transparent;
-    color: #db4566;
+    color: #093c70;
 }
 
 .slider_section .carousel_btn-box {
@@ -335,6 +336,11 @@ a:focus {
     position: relative;
     padding: 10px;
     margin-top: 25px;
+    overflow: hidden;
+}
+
+.details_head {
+    display: inline-block;
 }
 
 .shop_section .box a {
@@ -370,9 +376,11 @@ a:focus {
 }
 
 .shop_section .box .detail-box h6 span {
-    color: #db4f66;
+    color: #094770;
 }
-
+.price {
+    color: #094770;
+}
 .shop_section .box .new {
     width: 50px;
     height: 50px;
@@ -406,9 +414,9 @@ a:focus {
 .shop_section .btn-box a {
     display: inline-block;
     padding: 10px 40px;
-    background-color: #f16179;
+    background-color: #093c70;
     color: #ffffff;
-    border: 1px solid #f16179;
+    border: 1px solid #093c70;
     border-radius: 5px;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
@@ -416,7 +424,7 @@ a:focus {
 
 .shop_section .btn-box a:hover {
     background-color: transparent;
-    color: #f16179;
+    color: #093c70;
 }
 
 /* info section */
