@@ -21,7 +21,7 @@
             <div class="container">
                 <div class="row">
                     @foreach($markets as $market)
-                    <div class="col-sm-4">
+                    <div class="col-sm-6 col-md-4 col-lg-3">
                         <div class="card card_border_market mb-4" style="width: 18rem;">
                             <img class="card-img-top card_img_market" src="{{asset('asset/image/market/')}}/{{$market->market_image}}" alt="Card image cap">
                             <div class="card-body">
@@ -37,9 +37,6 @@
                     @endif
                 </div>
             </div>
-
-
-
 
         </div>
     </main>

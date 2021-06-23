@@ -15,16 +15,16 @@
                         <form wire:submit.prevent="addMarket">
                             <div class="mb-3">
                                 <label class="form-label">Market Name</label>
-                                <input type="text" class="form-control" wire:model="market_name">
+                                <input type="text" class="form-control" wire:model="market_name" required>
 
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Martket Address</label>
-                                <input type="text" class="form-control" wire:model="market_address">
+                                <input type="text" class="form-control" wire:model="market_address" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Shop Image</label>
-                                <input type="file" class="form-control" wire:model="market_image">
+                                <input type="file" class="form-control" wire:model="market_image" required>
                                 @if($market_image)
                                 <img src="{{$market_image->temporaryUrl()}}" alt="" width="100" height="100">
                                 @endif

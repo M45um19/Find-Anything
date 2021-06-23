@@ -35,7 +35,7 @@
 
                             <div class="mb-2">
                                 <label class="form-label">Shop Image</label>
-                                <input type="file" class="form-control" wire:model="s_image">
+                                <input type="file" class="form-control" wire:model="s_image" required>
                                 @if($s_image)
                                 <img src="{{$s_image->temporaryUrl()}}" alt="" width="100" height="100">
                                 @endif

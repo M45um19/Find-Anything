@@ -15,12 +15,12 @@
                         <form wire:submit.prevent="updateMarket">
                             <div class="mb-3">
                                 <label class="form-label">Market Name</label>
-                                <input type="text" class="form-control" wire:model="market_name">
+                                <input type="text" class="form-control" wire:model="market_name" required>
 
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Martket Address</label>
-                                <input type="text" class="form-control" wire:model="market_address">
+                                <input type="text" class="form-control" wire:model="market_address" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Shop Image</label>
