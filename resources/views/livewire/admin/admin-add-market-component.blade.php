@@ -22,7 +22,13 @@
                                 <label class="form-label">Martket Address</label>
                                 <input type="text" class="form-control" wire:model="market_address">
                             </div>
-
+                            <div class="mb-3">
+                                <label class="form-label">Shop Image</label>
+                                <input type="file" class="form-control" wire:model="market_image">
+                                @if($market_image)
+                                <img src="{{$market_image->temporaryUrl()}}" alt="" width="100" height="100">
+                                @endif
+                            </div>
                             <button type="submit" class="btn btn-success">Submit</button>
                         </form>
                     </div>

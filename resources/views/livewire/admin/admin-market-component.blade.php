@@ -15,6 +15,7 @@
                             <th scope="col">ID</th>
                             <th scope="col">Market Name</th>
                             <th scope="col">Market Address</th>
+                            <th scope="col">Market Image</th>
                             <th scope="col">Action</th>
 
                         </tr>
@@ -25,6 +26,7 @@
                             <th scope="row">{{$market->id}}</th>
                             <td>{{$market->market_name}}</td>
                             <td>{{$market->market_address}}</td>
+                            <td><img src="{{asset('asset/image/market')}}/{{$market->market_image}}" alt="" width="60" height="60"></td>
                             <td>
                                 <a class="btn btn-secondary" href="{{route('admin.editMarket',['id'=>$market->id])}}">Edit</a>
                                 <a class="btn btn-danger delete_anything" wire:click.prevent="deleteMarket({{$market->id}})">Delete</a>

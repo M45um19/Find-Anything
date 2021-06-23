@@ -2,7 +2,7 @@
     <main class="mt-5 pt-3">
         <div class="container-fluid">
             <br>
-            <h3 class="text-center">Add Your Shop Details</h3>
+            <h3 class="text-center">Edit Your Shop Details</h3>
             <hr>
 
             <a class="btn btn-dark" href="{{route('user.Shop')}}">Dashboard</a>
@@ -11,15 +11,8 @@
                 <div class="row">
                     <div class="col-6">
                         <br>
-                        <form wire:submit.prevent="addShopDetails" class="form-control">
+                        <form wire:submit.prevent="edtShopDetails" class="form-control">
 
-                            <label for="">
-                                <h5>You Select <b>{{ $this->m_name }}</b> market</h5>
-                                <a href="{{route('user.marketSelect')}}" class="btn btn-outline-dark">Change</a>
-                            </label>
-                            <input type="text" value="{{ $this->m_id }}" wire:model="m_id" hidden>
-                            <input type="text" value="{{ $this->m_name }}" wire:model="m_name" hidden>
-                            <input type="text" value="{{ $this->m_add }}" wire:model="m_add" hidden>
 
                             <div class="mb-2 mt-2">
                                 <label class="form-label">Shop Name</label>
@@ -35,9 +28,11 @@
 
                             <div class="mb-2">
                                 <label class="form-label">Shop Image</label>
-                                <input type="file" class="form-control" wire:model="s_image">
-                                @if($s_image)
-                                <img src="{{$s_image->temporaryUrl()}}" alt="" width="100" height="100">
+                                <input type="file" class="form-control" wire:model="new_image">
+                                @if($new_image)
+                                <img src="{{$new_image->temporaryUrl()}}" alt="" width="100" height="100">
+                                @else
+                                <img src="{{asset('asset/image/shop')}}/{{$shop_image}}" alt="" width="100" height="100">
                                 @endif
                             </div>
 

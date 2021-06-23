@@ -6,6 +6,7 @@ use App\Http\Livewire\Admin\AdminEditMarketComponent;
 use App\Http\Livewire\Admin\AdminMarketComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\User\UserAddShopDetails;
+use App\Http\Livewire\User\UserEditShopComponent;
 use App\Http\Livewire\User\UserMarketSelect;
 use App\Http\Livewire\User\UserShopComponent;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/user/shop', UserShopComponent::class)->name('user.Shop');
     Route::get('/user/addshopdetails/{id}', UserAddShopDetails::class)->name('user.addShopDetails');
     Route::get('/user/marketselect', UserMarketSelect::class)->name('user.marketSelect');
+    Route::get('/user/shopEdit/{id}', UserEditShopComponent::class)->name('user.shopEdit');
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () {

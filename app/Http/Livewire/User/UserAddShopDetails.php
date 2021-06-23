@@ -4,12 +4,14 @@ namespace App\Http\Livewire\User;
 
 use App\Models\market;
 use App\Models\Shop;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class UserAddShopDetails extends Component
 {
-
+    use WithFileUploads;
     public $m_id;
     public $m_name;
     public $m_add;
@@ -44,7 +46,9 @@ class UserAddShopDetails extends Component
 
         $addShop->shop_name = $this->s_name;
         $addShop->shop_address = $this->s_add;
-        $addShop->shop_image = $this->s_image;
+        $imageName = Carbon::now()->timestamp . '.' . $this->s_image->extension();
+        $this->s_image->storeAs('shop/', $imageName);
+        $addShop->shop_image = $imageName;
         $addShop->mobile_number = $this->m_number;
         $addShop->shop_description = $this->s_des;
         $addShop->save();

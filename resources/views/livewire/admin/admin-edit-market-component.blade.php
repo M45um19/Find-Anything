@@ -22,7 +22,16 @@
                                 <label class="form-label">Martket Address</label>
                                 <input type="text" class="form-control" wire:model="market_address">
                             </div>
-
+                            <div class="mb-3">
+                                <label class="form-label">Shop Image</label>
+                                <input type="file" class="form-control" wire:model="new_image">
+                                <br>
+                                @if($new_image)
+                                <img src="{{$new_image->temporaryUrl()}}" alt="" width="100" height="100">
+                                @else
+                                <img src="{{asset('asset/image/market')}}/{{$market_image}}" alt="" width="100" height="100">
+                                @endif
+                            </div>
                             <button type="submit" class="btn btn-success">Update</button>
                         </form>
                     </div>
