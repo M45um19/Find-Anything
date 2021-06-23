@@ -9,12 +9,12 @@
             <br>
             <br>
             @if($shops->count() === 0)
-            <form class="col-5">
+            <div class="col-5">
                 <div class="input-group ">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search" wire:model="search_value" />
 
                 </div>
-            </form>
+            </div>
             <br>
 
 
