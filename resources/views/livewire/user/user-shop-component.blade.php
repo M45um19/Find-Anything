@@ -12,6 +12,7 @@
 
                     Tap to See Your Shop
                 </a>
+                <a class="btn btn-outline-dark" href="{{route('user.product')}}">My Products</a>
             </p>
             <div class="collapse" id="collapseExample">
                 <div class="card card-body">

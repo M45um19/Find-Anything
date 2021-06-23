@@ -2,21 +2,19 @@
     <main class="mt-5 pt-3">
         <div class="container-fluid">
             <br>
-            <h3 class="text-center">Add Product</h3>
+            <h3 class="text-center">Edit Product</h3>
             <hr>
 
-            <a class="btn btn-dark" href="{{route('user.Shop')}}">Dashboard</a>
+            <a class="btn btn-outline-dark" href="{{route('user.product')}}">My Products</a>
             <hr>
+
 
             <div class="">
                 <div class="row">
                     <div class="col-6">
-                        <form wire:submit.prevent="addProduct" class="form-control">
+                        <form wire:submit.prevent="editProductDetails" class="form-control">
 
-                            <input type="text" value="{{ $this->u_id }}" wire:model="u_id" hidden>
-                            <input type="text" value="{{ $this->s_id }}" wire:model="s_id" hidden>
-                            <input type="text" value="{{ $this->m_name }}" wire:model="m_name" hidden>
-                            <input type="text" value="{{ $this->m_des }}" wire:model="m_des" hidden>
+                            <input type="text" wire:model="pid" hidden>
 
                             <div class="mb-2 mt-2">
                                 <label for="form-label">Product Category</label>
@@ -37,11 +35,14 @@
 
                             <div class="mb-2">
                                 <label class="form-label">Product Image</label>
-                                <input type="file" class="form-control" wire:model="p_image" required>
+                                <input type="file" class="form-control" wire:model="p_image">
                                 @if($p_image)
                                 <img src="{{$p_image->temporaryUrl()}}" alt="" width="100" height="100">
+                                @else
+                                <img src="{{asset('asset/image/product')}}/{{$old_image}}" alt="" width="100" height="100">
                                 @endif
                             </div>
+
 
                             <div class="mb-2">
                                 <label class="form-label">Sale Prize</label>
