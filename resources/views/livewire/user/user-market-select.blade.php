@@ -11,10 +11,8 @@
             @if($shops->count() === 0)
             <form class="col-5">
                 <div class="input-group ">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-primary" type="submit">
-                        <i class="bi bi-search"></i>
-                    </button>
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" wire:model="search_value" />
+
                 </div>
             </form>
             <br>
