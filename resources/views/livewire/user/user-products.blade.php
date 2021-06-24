@@ -30,12 +30,13 @@
 
                                 <div class="d-block">
                                     <a href="{{route('user.editProduct',['id'=>$product->id])}}" class="btn btn-secondary btn-sm btn_product">Edit</a>
-                                    <a href="" class="btn btn-danger btn-sm btn_product" data-bs-toggle="modal" data-bs-target="#exampleModal">Remove</a>
+                                    <a href="" class="btn btn-danger btn-sm btn_product" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ $product->id }}">Remove</a>
                                 </div>
 
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                                <div class="modal fade" id="exampleModal-{{ $product->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -52,11 +53,11 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                     @endforeach
+
 
                 </div>
             </div>

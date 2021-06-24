@@ -15,14 +15,13 @@ class UserProducts extends Component
     public function deleteProduct($pid)
     {
         //dd($pid);
-        $del = Product::where('id', $pid)->delete();
-        if ($del) {
-            session()->flash('Success_message', 'Deleted successfully');
-            return redirect()->route('user.product');
-        } else {
-            session()->flash('warning', 'Delete Failed');
-            return redirect()->route('user.product');
-        }
+        $del = Product::find($pid);
+
+        $this->product_image = $del->product_image;
+        unlink(public_path("asset/image/product/" . $this->product_image));
+        $del->delete();
+        session()->flash('Success_message', 'Deleted successfully');
+        return redirect()->route('user.product');
     }
 
     public function render()
