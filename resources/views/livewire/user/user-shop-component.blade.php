@@ -12,7 +12,7 @@
 
                     Tap to See Your Shop
                 </a>
-                <a class="btn btn-outline-dark" href="{{route('user.product')}}">My Products</a>
+
             </p>
             <div class="collapse" id="collapseExample">
                 <div class="card card-body">
@@ -40,6 +40,7 @@
 
 
             @else
+            <h3>First you have to add a shop</h3>
             <a class="btn btn-success" href="{{route('user.marketSelect')}}">Add Shop details</a>
             <br>
             <br>

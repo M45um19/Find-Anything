@@ -126,6 +126,16 @@
         })
     </script>
     @endif
+    @if(Session::has('wrong_message'))
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Wrong Choice',
+            text: 'This is not your product!',
+            footer: 'Choice your own product'
+        })
+    </script>
+    @endif
     @livewireScripts
 </body>
 

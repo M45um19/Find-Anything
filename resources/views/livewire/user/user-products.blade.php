@@ -4,31 +4,34 @@
             <br>
             <h3 class="text-center">My Products</h3>
             <hr>
+            @if($shops->count() > 0 )
 
-            <a class="btn btn-dark" href="{{route('user.Shop')}}">Dashboard</a>
-            <a class="btn btn-outline-dark" href="{{route('user.addProduct')}}">Add Product</a>
+            <a class="btn btn-dark" href="{{route('user.addProduct')}}">Add Product</a>
             <hr>
             <div class="col-5">
                 <div class="input-group ">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" wire:model="search_value" />
+                    <input class="form-control" type="search" placeholder="Search your product" aria-label="Search" wire:model="search_value" />
 
                 </div>
             </div>
             <br>
 
             <div class="container">
-                <div class="row">
-                    @foreach($products as $product)
-                    <div class="col-sm-6 col-md-4 col-lg-3">
+
+                <div class="row ">
+
+                    @foreach($products as $product) <div class="col-md-auto">
                         <div class="card card_border_market mb-3" style="width: 18rem;">
-                            <img class="card-img-top card_img_market" src="{{asset('asset/image/product/')}}/{{$product->product_image}}" alt="Card image cap">
+                            <img class="card-img-top card_img_producr" src="{{asset('asset/image/product/')}}/{{$product->product_image}}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">{{$product->product_name}}</h5>
-                                <p class="card-text text-success"><s>{{$product->product_regular_prize}}TK </s> {{$product->product_sale_prize}}TK</p>
-                                <p class="card-text"></p>
-                                <p class="card-text" style="font-size: 10pt">{{$product->product_description}}</p>
-                                <a href="{{route('user.editProduct',['id'=>$product->id])}}" class="btn btn-warning btn-sm">Edit</a>
-                                <a href="" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Remove</a>
+                                <p class="card-text">Reguler Price: <s>{{$product->product_regular_prize}}TK </s> </p>
+                                <p class="card-text text-success">Sale Price: {{$product->product_sale_prize}}TK</p>
+
+                                <div class="d-block">
+                                    <a href="{{route('user.editProduct',['id'=>$product->id])}}" class="btn btn-secondary btn-sm btn_product">Edit</a>
+                                    <a href="" class="btn btn-danger btn-sm btn_product" data-bs-toggle="modal" data-bs-target="#exampleModal">Remove</a>
+                                </div>
 
 
                                 <!-- Modal -->
@@ -58,6 +61,57 @@
                 </div>
             </div>
 
+            @else
+            <h3>You don't have any shop yet.</h3>
+            <a class="btn btn-success" href="{{route('user.marketSelect')}}">Add Shop details</a>
+            @endif
+
         </div>
     </main>
 </div>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+
+
+        margin: 0;
+        background-color: #f7f8fc;
+
+        color: #10182f;
+    }
+
+    .container {
+
+        width: 100%;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .card {
+
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        width: 300px;
+    }
+
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+        min-height: 250px;
+    }
+
+    .btn_product {
+        border-radius: 50px;
+
+    }
+</style>

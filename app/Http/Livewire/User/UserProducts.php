@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\User;
 
 use App\Models\Product;
+use App\Models\Shop;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class UserProducts extends Component
@@ -25,9 +27,10 @@ class UserProducts extends Component
 
     public function render()
     {
+        $shops = Shop::where('user_id', Auth::user()->id);
         $products = Product::where('product_name', 'like', '%' .  $this->search_value . '%')
             ->orWhere('product_description', 'like', '%' .  $this->search_value . '%')
-            ->get();
-        return view('livewire.user.user-products', ['products' => $products])->layout('layouts.userDashboardBase');;
+            ->get()->where('user_id', Auth::user()->id);
+        return view('livewire.user.user-products', ['shops' => $shops, 'products' => $products])->layout('layouts.userDashboardBase');;
     }
 }

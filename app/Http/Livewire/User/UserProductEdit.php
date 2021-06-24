@@ -4,6 +4,7 @@ namespace App\Http\Livewire\User;
 
 use App\Models\Product;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Livewire\WithFileUploads;
 use Livewire\Component;
 
@@ -24,15 +25,23 @@ class UserProductEdit extends Component
 
     public function mount($id)
     {
+
         $this->p_id = $id;
         $productInfo = Product::where('id', $id)->first();
-        $this->p_catagory = $productInfo->product_type;
-        $this->p_name = $productInfo->product_name;
-        $this->old_image  = $productInfo->product_image;
-        $this->p_sprize = $productInfo->product_sale_prize;
-        $this->p_rprize = $productInfo->product_regular_prize;
-        $this->p_able = $productInfo->product_availability;
-        $this->p_des = $productInfo->product_description;
+        if ($productInfo->user_id == Auth::user()->id) {
+
+
+            $this->p_catagory = $productInfo->product_type;
+            $this->p_name = $productInfo->product_name;
+            $this->old_image  = $productInfo->product_image;
+            $this->p_sprize = $productInfo->product_sale_prize;
+            $this->p_rprize = $productInfo->product_regular_prize;
+            $this->p_able = $productInfo->product_availability;
+            $this->p_des = $productInfo->product_description;
+        } else {
+            session()->flash('wrong_message', 'Wrong choice');
+            return redirect()->route('user.product');
+        }
     }
 
     public function editProductDetails()
