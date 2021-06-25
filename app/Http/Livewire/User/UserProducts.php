@@ -20,7 +20,7 @@ class UserProducts extends Component
         $this->product_image = $del->product_image;
         unlink(public_path("asset/image/product/" . $this->product_image));
         $del->delete();
-        session()->flash('Success_message', 'Deleted successfully');
+        session()->flash('Success_message', 'Product Deleted successfully');
         return redirect()->route('user.product');
     }
 
