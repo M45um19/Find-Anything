@@ -22,7 +22,25 @@
 
                     @foreach($products as $product) <div class="col-md-auto">
                         <div class="card card_border_market mb-3" style="width: 18rem;">
-                            <img class="card-img-top card_img_producr" src="{{asset('asset/image/product/')}}/{{$product->product_image}}" alt="Card image cap">
+                            <?php
+                            $imgInfo = getimagesize('asset/image/product/' . $product->product_image);
+                            $w = $imgInfo[0];
+                            $h = $imgInfo[1];
+                            if ($h > $w) {
+                                $r = $h / $w;
+                                $nh = 246 + 30; // 30+ to cover lurma padding -_-
+                                $nw = round(246 / $r) + 30;
+                            } else {
+                                $r = $w / $h;
+                                $nw = 190 + 30;
+                                $nh = round(190 / $r) + 30;
+                            }
+                            //echo "<h2 class='text-center'>h:{{$nh}}, w: {{$nw}}</h2>";
+                            ?>
+
+                            <div style="height: 245px; width: 185px; margin: auto;">
+                                <img class="card-img card_img_producr" src="{{asset('asset/image/product/')}}/{{$product->product_image}}" style="width: {{$nw}}px; height: {{$nh}}px" alt="product">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{$product->product_name}}</h5>
                                 @if($product->product_availability == 'Not Available')
