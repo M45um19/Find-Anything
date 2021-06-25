@@ -79,6 +79,12 @@
                         </div>
                     </li>
                     <li>
+                        <a href="{{route('user.Shop')}}" class="nav-link px-3">
+                            <span class="me-2"><i class="bi bi-book-fill"></i></span>
+                            <span>My Shop</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{route('user.product')}}" class="nav-link px-3">
                             <span class="me-2"><i class="bi bi-book-fill"></i></span>
                             <span>My Products</span>
