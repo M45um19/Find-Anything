@@ -39,7 +39,7 @@ class AdminEditMarketComponent extends Component
             unlink(public_path("asset/image/market/" . $this->market_image));
         }
         $market->save();
-        session()->flash('Success_message', 'Market added successfully');
+        session()->flash('Success_message', 'Market Edited successfully');
         return redirect()->route('admin.market');
     }
 

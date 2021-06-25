@@ -12,6 +12,7 @@
 
                     Tap to See Your Shop
                 </a>
+                <a href="{{route('user.product')}}" class="btn btn-outline-dark">My Products</a>
 
             </p>
             <div class="collapse" id="collapseExample">
