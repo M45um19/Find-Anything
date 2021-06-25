@@ -20,8 +20,9 @@
 
                             <div class="mb-2 mt-2">
                                 <label for="form-label">Product Category</label>
-                                <select class="form-control" wire:model="p_catagory">
-                                    <option value="mobile">Any</option>
+                                <select class="form-control" wire:model="p_catagory" required>
+                                    <option value="">select</option>
+                                    <option value="all type">All Type</option>
                                     <option value="mobile">Mobile</option>
                                     <option value="pc">PC</option>
                                     <option value="watch">Watch</option>
@@ -57,7 +58,11 @@
 
                             <div class="mb-2">
                                 <label class="form-label">Availability</label>
-                                <input type="text" class="form-control" wire:model="p_able" required>
+                                <select class="form-control" wire:model="p_able" required>
+                                    <option value="">select</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Not Available">Not Available</option>
+                                </select>
 
                             </div>
 

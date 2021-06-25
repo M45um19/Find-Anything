@@ -25,6 +25,11 @@
                             <img class="card-img-top card_img_producr" src="{{asset('asset/image/product/')}}/{{$product->product_image}}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">{{$product->product_name}}</h5>
+                                @if($product->product_availability == 'Not Available')
+                                <p class="card-text- text-warning">{{$product->product_availability}}</p>
+                                @elseif($product->product_availability == 'Available')
+                                <p class="card-text- text-success">{{$product->product_availability}}</p>
+                                @endif
                                 <p class="card-text">Reguler Price: <s>{{$product->product_regular_prize}}TK </s> </p>
                                 <p class="card-text text-success">Sale Price: {{$product->product_sale_prize}}TK</p>
 
