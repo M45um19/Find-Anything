@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('shop_id');
             $table->string('market_name');
             $table->string('market_address');
-            $table->string('product_type')->default('any');
+            $table->string('product_type');
             $table->string('product_name');
             $table->string('product_description');
             $table->string('product_image');
