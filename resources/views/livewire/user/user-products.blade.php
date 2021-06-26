@@ -38,7 +38,7 @@
                             //echo "<h2 class='text-center'>h:{{$nh}}, w: {{$nw}}</h2>";
                             ?>
 
-                            <div style="height: 245px; width: 185px; margin: auto;">
+                            <div class="text-center">
                                 <img class="card-img card_img_producr" src="{{asset('asset/image/product/')}}/{{$product->product_image}}" style="width: {{$nw}}px; height: {{$nh}}px" alt="product">
                             </div>
                             <div class="card-body">

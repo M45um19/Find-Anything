@@ -139,7 +139,7 @@
     @endif
     @if(Session::has('wrong_message'))
     <p id="eses" hidden>
-        {{Session::get('Success_message')}}
+        {{Session::get('wrong_message')}}
     </p>
     <script>
         emsg = $('#eses').text();
