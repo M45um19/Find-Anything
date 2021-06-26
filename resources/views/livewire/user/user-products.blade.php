@@ -20,8 +20,8 @@
 
                 <div class="row ">
 
-                    @foreach($products as $product) <div class="col-md-auto">
-                        <div class="card card_border_market mb-3" style="width: 18rem;">
+                    @foreach($products as $product) <div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch">
+                        <div class="card mb-3" style="width: 18rem;">
                             <?php
                             $imgInfo = getimagesize('asset/image/product/' . $product->product_image);
                             $w = $imgInfo[0];

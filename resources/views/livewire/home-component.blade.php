@@ -1,4 +1,5 @@
 <div>
+
     <section class="slider_section">
         <div class="slider_container">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -75,228 +76,97 @@
         </div>
     </section>
     <!-- end slider section -->
-</div>
-<!-- end hero area -->
 
-<!-- shop section -->
+    <!-- end hero area -->
 
-<section class="shop_section layout_padding">
-    <div class="container">
-        <div class="heading_container heading_center">
-            <h2>
-                Latest Products
-            </h2>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="box">
-                    <a href="">
-                        <div class="img-box">
-                            <img src="{{asset('asset/image/images/p1.png')}}" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6 class="details_head">
-                                Monitor
-                            </h6>
-                            <br>
-                            <h6>
-                                Price
-                                <span class="price">
-                                    $200
-                                </span>
-                            </h6>
-                        </div>
+    <!-- shop section -->
 
-                        <div class="new">
-                            <span>
-                                New
-                            </span>
-                        </div>
-                    </a>
-                </div>
+    <section class="shop_section layout_padding">
+        <div class="container">
+            <div class="heading_container heading_center">
+                <h2>
+                    All Products
+                </h2>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="box">
-                    <a href="">
-                        <div class="img-box">
-                            <img src="{{asset('asset/image/images/p2.png')}}" alt="">
+            <div class="Search_home">
+                <form>
+
+                    <div class="wrapper">
+                        <p>Search Bar</p>
+                        <div class="search-container">
+
+                            <input type="text" class="date-from" placeholder="Product Name" wire:model="search_product_name">
+                            <input type="text" class="date-from" placeholder="Product Place" wire:model="search_product_place">
+
+
+                            <button type="submit" class="button">Search</button>
                         </div>
-                        <div class="detail-box">
-                            <h6>
-                                Watch
-                            </h6>
-                            <h6>
-                                Price
-                                <span>
-                                    $30000
-                                </span>
-                            </h6>
-                        </div>
-                        <div class="new">
-                            <span>
-                                New
-                            </span>
-                        </div>
-                    </a>
-                </div>
+                    </div>
+
+
+                </form>
+
+
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="box">
-                    <a href="">
-                        <div class="img-box">
-                            <img src="{{asset('asset/image/images/p3.png')}}" alt="">
+            <br>
+            <br>
+            <div class="row ">
+
+                @foreach($products as $product) <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-stretch">
+                    <div class="card mb-3" style="width: 18rem;">
+                        <?php
+                        $imgInfo = getimagesize('asset/image/product/' . $product->product_image);
+                        $w = $imgInfo[0];
+                        $h = $imgInfo[1];
+                        if ($h > $w) {
+                            $r = $h / $w;
+                            $nh = 246 + 30; // 30+ to cover lurma padding -_-
+                            $nw = round(246 / $r) + 30;
+                        } else {
+                            $r = $w / $h;
+                            $nw = 190 + 30;
+                            $nh = round(190 / $r) + 30;
+                        }
+                        //echo "<h2 class='text-center'>h:{{$nh}}, w: {{$nw}}</h2>";
+                        ?>
+
+                        <div class="text-center">
+                            <img class="card-img card_img_producr" src="{{asset('asset/image/product/')}}/{{$product->product_image}}" style="width: {{$nw}}px; height: {{$nh}}px" alt="product">
                         </div>
-                        <div class="detail-box">
-                            <h6>
-                                Teddy Bear
-                            </h6>
-                            <h6>
-                                Price
-                                <span>
-                                    $110
-                                </span>
-                            </h6>
+                        <div class="card-body">
+                            <h5 class="card-title">{{$product->product_name}}</h5>
+                            @if($product->product_availability == 'Not Available')
+                            <p class="">Availablity: <Availablity: class="text-warning">{{$product->product_availability}}</Availablity:>
+                            </p>
+                            @elseif($product->product_availability == 'Available')
+
+                            <p class="">Availablity: <Availablity: class="text-success">{{$product->product_availability}}</Availablity:>
+                            </p>
+                            @endif
+                            <p class="">Market Name: {{$product->market_name}} </p>
+
+                            <p class="">Sale Price: <span class="text-success">{{$product->product_sale_prize}}TK</span></p>
+
+                            <div class="d-block">
+                                <a href="" class="btn btn_details">Details</a>
+
+                            </div>
+
+
                         </div>
-                        <div class="new">
-                            <span>
-                                New
-                            </span>
-                        </div>
-                    </a>
+                    </div>
                 </div>
+                @endforeach
+
+
+
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="box">
-                    <a href="">
-                        <div class="img-box">
-                            <img src="{{asset('asset/image/images/p4.png')}}" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Flower Bouquet
-                            </h6>
-                            <h6>
-                                Price
-                                <span>
-                                    $45
-                                </span>
-                            </h6>
-                        </div>
-                        <div class="new">
-                            <span>
-                                New
-                            </span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="box">
-                    <a href="">
-                        <div class="img-box">
-                            <img src="{{asset('asset/image/images/p5.png')}}" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Teddy Bear
-                            </h6>
-                            <h6>
-                                Price
-                                <span>
-                                    $95
-                                </span>
-                            </h6>
-                        </div>
-                        <div class="new">
-                            <span>
-                                New
-                            </span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="box">
-                    <a href="">
-                        <div class="img-box">
-                            <img src="{{asset('asset/image/images/p6.png')}}" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Flower Bouquet
-                            </h6>
-                            <h6>
-                                Price
-                                <span>
-                                    $70
-                                </span>
-                            </h6>
-                        </div>
-                        <div class="new">
-                            <span>
-                                New
-                            </span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="box">
-                    <a href="">
-                        <div class="img-box">
-                            <img src="{{asset('asset/image/images/p7.png')}}" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Watch
-                            </h6>
-                            <h6>
-                                Price
-                                <span>
-                                    $400
-                                </span>
-                            </h6>
-                        </div>
-                        <div class="new">
-                            <span>
-                                New
-                            </span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="box">
-                    <a href="">
-                        <div class="img-box">
-                            <img src="{{asset('asset/image/images/p8.png')}}" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6>
-                                Ring
-                            </h6>
-                            <h6>
-                                Price
-                                <span>
-                                    $450
-                                </span>
-                            </h6>
-                        </div>
-                        <div class="new">
-                            <span>
-                                New
-                            </span>
-                        </div>
-                    </a>
-                </div>
+
+            <div class="wrap-pagination-info">
+                {{$products->links()}}
             </div>
         </div>
-        <div class="btn-box">
-            <a href="">
-                View All Products
-            </a>
-        </div>
-    </div>
-</section>
+
+    </section>
 
 </div>
