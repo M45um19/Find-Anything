@@ -148,7 +148,7 @@
                             <p class="">Sale Price: <span class="text-success">{{$product->product_sale_prize}}TK</span></p>
 
                             <div class="d-block">
-                                <a href="" class="btn btn_details">Details</a>
+                                <a href="{{route('details',['product_id'=>$product->id])}}" class="btn btn_details">Details</a>
 
                             </div>
 

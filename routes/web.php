@@ -5,6 +5,7 @@ use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminEditMarketComponent;
 use App\Http\Livewire\Admin\AdminMarketComponent;
 use App\Http\Livewire\HomeComponent;
+use App\Http\Livewire\ProductDetailsComponent;
 use App\Http\Livewire\User\UserAddProducts;
 use App\Http\Livewire\User\UserAddShopDetails;
 use App\Http\Livewire\User\UserEditShopComponent;
@@ -30,6 +31,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', HomeComponent::class);
+Route::get('/productDetails/{product_id}', ProductDetailsComponent::class)->name('details');
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
