@@ -12,12 +12,12 @@
                             $h = $imgInfo[1];
                             if ($h > $w) {
                                 $r = $h / $w;
-                                $nh = 246 + 30; // 30+ to cover lurma padding -_-
-                                $nw = round(246 / $r) + 30;
+                                $nh = 300 + 30; // 30+ to cover lurma padding -_-
+                                $nw = round(300 / $r) + 30;
                             } else {
                                 $r = $w / $h;
-                                $nw = 190 + 30;
-                                $nh = round(190 / $r) + 30;
+                                $nw = 300 + 30;
+                                $nh = round(300 / $r) + 30;
                             }
                             //echo "<h2 class='text-center'>h:{{$nh}}, w: {{$nw}}</h2>";
                             ?>
@@ -29,12 +29,18 @@
                     <div class="details col-md-6">
                         <h3 class="product-title">{{$product->product_name}}</h3>
 
-                        <p class="product-description">Description: {{$product->product_description}}</p>
+                        <p class="product-description"><strong>Description: </strong> {{$product->product_description}}</p>
                         <h4 class="price">Reguler price: <span><s>${{$product->product_regular_prize}}</s></span></h4>
                         <h4 class="price">Sale price: <span>${{$product->product_sale_prize}}</span></h4>
 
                         <span><strong>Market Name: </strong>{{$product->market_name}}</span>
                         <span><strong>Market Address: </strong>{{$product->market_address}}</span>
+                        <span><strong>Product Availablity: </strong>{{$product->product_availability}}</span>
+                        <br>
+                        <span><strong>Shop Name: </strong>{{$shop->shop_name}}</span>
+                        <span><strong>Shop Address: </strong>{{$shop->shop_address}}</span>
+                        <span><strong>Shop Mobile Number: </strong>{{$shop->mobile_number}}</span>
+                        <br>
                         <div>
                             <button class="btn btn_details" type="button">See Shop Details</button>
 
