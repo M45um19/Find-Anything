@@ -120,12 +120,12 @@
                         $h = $imgInfo[1];
                         if ($h > $w) {
                             $r = $h / $w;
-                            $nh = 246 + 30; // 30+ to cover lurma padding -_-
-                            $nw = round(246 / $r) + 30;
+                            $nh = 200 + 30; // 30+ to cover lurma padding -_-
+                            $nw = round(200 / $r) + 30;
                         } else {
                             $r = $w / $h;
-                            $nw = 190 + 30;
-                            $nh = round(190 / $r) + 30;
+                            $nw = 200 + 30;
+                            $nh = round(200 / $r) + 30;
                         }
                         //echo "<h2 class='text-center'>h:{{$nh}}, w: {{$nw}}</h2>";
                         ?>
