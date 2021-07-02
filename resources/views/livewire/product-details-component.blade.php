@@ -30,8 +30,8 @@
                         <h3 class="product-title">{{$product->product_name}}</h3>
 
                         <p class="product-description">Description: {{$product->product_description}}</p>
-                        <h4 class="price">Reguler price: <span><s>${{$product->product_regular_prize}}</s></span></h4>
-                        <h4 class="price">Sale price: <span>${{$product->product_sale_prize}}</span></h4>
+                        <h4 class="price">Reguler price: <span><s>৳ {{$product->product_regular_prize}}</s></span></h4>
+                        <h4 class="price">Sale price: <span>৳ {{$product->product_sale_prize}}</span></h4>
 
                         <span><strong>Market Name: </strong>{{$product->market_name}}</span>
                         <span><strong>Market Address: </strong>{{$product->market_address}}</span>
