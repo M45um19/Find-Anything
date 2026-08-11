@@ -1,1 +1,0 @@
-<img src="asset/image/2.png" alt="" style="width:128px;">
